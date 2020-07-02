@@ -8,7 +8,13 @@
   >
     <div class="md-toolbar-row md-collapse-lateral">
       <div class="md-toolbar-section-start">
-        <h3 class="md-title">Vue Material Kit</h3>
+        <a href="/">
+          <img
+             :src="headLogo"
+             alt="Da Mall"
+             class=""
+          />
+        </a>
       </div>
       <div class="md-toolbar-section-end">
         <md-button
@@ -27,130 +33,19 @@
               <!-- Here you can add your items from the section-start of your toolbar -->
             </mobile-menu>
             <md-list>
-              <li class="md-list-item" v-if="!showDownload">
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
+              <template v-for="(item,index) in menuData">
+                <md-list-item
+                        :key="index"
+                        :href=item.href
+                        v-if="showDownload"
+                        :class="{active:item.routeName==activeRoute}"
+                        @click="scrollToElement($event,item.routeName)"
+                        @mouseover="mouseOver($event)"
+                        @mouseleave="mouseLeave($event,item.routeName)"
                 >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">apps</i>
-                        <p>Components</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#/">
-                            <i class="material-icons">layers</i>
-                            <p>All Components</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            href="https://demos.creative-tim.com/vue-material-kit/documentation/"
-                          >
-                            <i class="material-icons">content_paste</i>
-                            <p>Documentation</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-
-              <md-list-item
-                href="https://demos.creative-tim.com/vue-material-kit/documentation/"
-                target="_blank"
-                v-if="showDownload"
-              >
-                <i class="material-icons">content_paste</i>
-                <p>Documentation</p>
-              </md-list-item>
-
-              <md-list-item
-                href="javascript:void(0)"
-                @click="scrollToElement()"
-                v-if="showDownload"
-              >
-                <i class="material-icons">cloud_download</i>
-                <p>Download</p>
-              </md-list-item>
-
-              <li class="md-list-item" v-else>
-                <a
-                  href="javascript:void(0)"
-                  class="md-list-item-router md-list-item-container md-button-clean dropdown"
-                >
-                  <div class="md-list-item-content">
-                    <drop-down direction="down">
-                      <md-button
-                        slot="title"
-                        class="md-button md-button-link md-white md-simple dropdown-toggle"
-                        data-toggle="dropdown"
-                      >
-                        <i class="material-icons">view_carousel</i>
-                        <p>Examples</p>
-                      </md-button>
-                      <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                          <a href="#/landing">
-                            <i class="material-icons">view_day</i>
-                            <p>Landing Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/login">
-                            <i class="material-icons">fingerprint</i>
-                            <p>Login Page</p>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#/profile">
-                            <i class="material-icons">account_circle</i>
-                            <p>Profile Page</p>
-                          </a>
-                        </li>
-                      </ul>
-                    </drop-down>
-                  </div>
-                </a>
-              </li>
-
-              <md-list-item
-                href="https://twitter.com/CreativeTim"
-                target="_blank"
-              >
-                <i class="fab fa-twitter"></i>
-                <p class="hidden-lg">Twitter</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Twitter</md-tooltip
-                >
-              </md-list-item>
-              <md-list-item
-                href="https://www.facebook.com/CreativeTim"
-                target="_blank"
-              >
-                <i class="fab fa-facebook-square"></i>
-                <p class="hidden-lg">Facebook</p>
-                <md-tooltip md-direction="bottom"
-                  >Like us on Facebook</md-tooltip
-                >
-              </md-list-item>
-              <md-list-item
-                href="https://www.instagram.com/CreativeTimOfficial"
-                target="_blank"
-              >
-                <i class="fab fa-instagram"></i>
-                <p class="hidden-lg">Instagram</p>
-                <md-tooltip md-direction="bottom"
-                  >Follow us on Instagram</md-tooltip
-                >
-              </md-list-item>
+                  <p :class="{white:item.routeName==activeRoute}">{{ item.text }}</p>
+                </md-list-item>
+              </template>
             </md-list>
           </div>
         </div>
@@ -158,7 +53,6 @@
     </div>
   </md-toolbar>
 </template>
-
 <script>
 let resizeTimeout;
 function resizeThrottler(actualResizeHandler) {
@@ -197,16 +91,39 @@ export default {
     colorOnScroll: {
       type: Number,
       default: 0
+    },
+    headLogo: {
+      type: String,
+      default: require("@/assets/img/head-logo2.png")
     }
   },
   data() {
     return {
       extraNavClasses: "",
-      toggledClass: false
+      toggledClass: false,
+      activeRoute:'',
+      menuData: [
+        {
+          routeName: 'index',
+          href: '/',
+          text: 'Home'
+        },
+        {
+          routeName: 'product',
+          href: '#/product',
+          text: 'Product'
+        },
+        {
+          routeName: 'contact',
+          href: '#/contact',
+          text: 'Contact'
+        }
+      ]
     };
   },
   computed: {
     showDownload() {
+      return true;
       const excludedRoutes = ["login", "landing", "profile"];
       return excludedRoutes.every(r => r !== this.$route.name);
     }
@@ -250,14 +167,31 @@ export default {
     scrollListener() {
       resizeThrottler(this.handleScroll);
     },
-    scrollToElement() {
+    scrollToElement(e,routeName) {
+      this.activeRoute = routeName;
+      let itemEles = document.getElementsByClassName('md-list-item');
+      for(var i=0;i<itemEles.length;i++){
+        itemEles[i].style.borderColor='transparent';
+      }
+      e.currentTarget.style.borderBottom = '2px #ffffff solid';
       let element_id = document.getElementById("downloadSection");
       if (element_id) {
         element_id.scrollIntoView({ block: "end", behavior: "smooth" });
       }
+    },
+    // 移入
+    mouseOver(e) {
+      e.currentTarget.style.borderBottom = '2px #ffffff solid';
+    },
+    // 移出
+    mouseLeave(e,routeName) {
+      if(this.activeRoute != routeName){
+        e.currentTarget.style.borderBottom="2px transparent solid";
+      }
     }
   },
   mounted() {
+    this.activeRoute = this.$route.name;
     document.addEventListener("scroll", this.scrollListener);
   },
   beforeDestroy() {
@@ -265,3 +199,24 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+  .md-list-item a .md-ripple p {
+    font-weight: 400;
+    font-size: 24px;
+  }
+  .md-toolbar.md-white {
+    background-color: #F1B016 !important;
+  }
+  .active{
+    border-bottom: 2px #ffffff solid;
+  }
+  .bottom-line{
+    border-bottom: 2px transparent solid;
+  }
+  .white{
+    color: #ffffff;
+  }
+  .md-list-item {
+    margin-left: 1.5rem;
+  }
+</style>

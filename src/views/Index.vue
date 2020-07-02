@@ -1,264 +1,97 @@
 <template>
   <div class="wrapper">
-    <parallax class="page-header header-filter" :style="headerStyle">
-      <div class="md-layout">
-        <div class="md-layout-item">
-          <div class="image-wrapper">
-            <img :src="leaf4" alt="leaf4" class="leaf4" v-show="leafShow" />
-            <img :src="leaf3" alt="leaf3" class="leaf3" v-show="leafShow" />
-            <img :src="leaf2" alt="leaf2" class="leaf2" v-show="leafShow" />
-            <img :src="leaf1" alt="leaf1" class="leaf1" v-show="leafShow" />
-            <div class="brand">
-              <h1>Vue Material Kit</h1>
-              <h3>A Badass Vue.js UI Kit made with Material Design.</h3>
-            </div>
+    <parallax class="section page-header header-filter" :style="headerStyle">
+      <div class="container">
+        <div class="md-layout">
+          <div
+                  class="md-layout-item md-size-50 md-small-size-70 md-xsmall-size-100"
+          >
+            <h1 class="title">
+              Your customers are everywhere
+              So do we.
+            </h1>
+            <h4>
+              From origin to brand concept, it records the whole process from farmland to dining table. We are so dedicated and professional, just for a good durian.
+            </h4>
+            <br />
+            <md-button
+                    href="javascript:void(0)"
+                    class="md-success md-lg"
+                    @click="startNow"
+            > Start now</md-button
+            >
           </div>
         </div>
       </div>
     </parallax>
+    <parallax class="section page-header header-filter" :style="contentStyle">
+
+    </parallax>
+    <parallax class="section page-header header-filter" :style="footerStyle">
+      <div class="md-list-item-content" style="width: 60%">
+        <ul class="footer-info">
+          <h3 style="color: #222222;margin-bottom: 20px">Our mission</h3>
+          <li v-for="(item,index) in footerInfo" :key="index">
+            <p><img src="../assets/img/arrow-right.png" alt="">{{ item }}</p>
+          </li>
+        </ul>
+        <div class="people-img">
+          <img
+                  :src="footerPeople"
+                  alt="people"
+          />
+        </div>
+      </div>
+    </parallax>
+    <parallax class="section page-header header-filter" style="height: 60px;padding: 40px 0;background-color: #F1B016">
+      <div class="copyright">
+        Copyright &copy; {{ year }}, made in
+        <a href="https://www.creative-tim.com/" target="_blank">Big Horse</a>
+        for a better web.
+      </div>
+    </parallax>
     <div class="main main-raised">
-      <div class="section section-basic">
-        <div class="container">
-          <div class="title">
-            <h2>Basic Elements</h2>
-          </div>
-          <basic-elements></basic-elements>
-        </div>
-      </div>
-      <div class="section section-navbars">
-        <div class="container">
-          <small-navigation></small-navigation>
-        </div>
-        <navigation></navigation>
-      </div>
-      <div class="section section-tabs">
-        <div class="container">
-          <tabs></tabs>
-        </div>
-      </div>
-      <div class="section section-white">
-        <div class="container">
-          <nav-pills></nav-pills>
-        </div>
-      </div>
-      <div class="section section-notifications">
-        <div class="container">
-          <div class="title">
-            <h3>Notifications</h3>
-          </div>
-        </div>
-        <notifications></notifications>
-      </div>
-      <div class="section">
-        <div class="container">
-          <typography-images></typography-images>
-        </div>
-      </div>
-      <div class="section section-javascript">
-        <div class="container">
-          <javascript-components></javascript-components>
-        </div>
-      </div>
-      <div class="section">
-        <div class="container text-center">
-          <div class="md-layout">
-            <div
-              class="md-layout-item md-size-66 md-xsmall-size-100 ml-auto mr-auto text-center"
-            >
-              <h2>Completed with examples</h2>
-              <h4>
-                The kit comes with three pre-built pages to help you get started
-                faster. You can change the text and images and you're good to
-                go. More importantly, looking at them will give you a picture of
-                what you can built with this powerful kit.
-              </h4>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section section-signup page-header" :style="signupImage">
+      <div class="section" style="padding-top: 20px">
         <div class="container">
           <div class="md-layout">
             <div
-              class="md-layout-item md-size-33 md-medium-size-40 md-small-size-50 md-xsmall-size-70 mx-auto text-center"
+                    class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
             >
-              <login-card header-color="green">
-                <h4 slot="title" class="card-title">Login</h4>
-                <md-button
-                  slot="buttons"
-                  href="javascript:void(0)"
-                  class="md-just-icon md-simple md-white"
-                >
-                  <i class="fab fa-facebook-square"></i>
-                </md-button>
-                <md-button
-                  slot="buttons"
-                  href="javascript:void(0)"
-                  class="md-just-icon md-simple md-white"
-                >
-                  <i class="fab fa-twitter"></i>
-                </md-button>
-                <md-button
-                  slot="buttons"
-                  href="javascript:void(0)"
-                  class="md-just-icon md-simple md-white"
-                >
-                  <i class="fab fa-google-plus-g"></i>
-                </md-button>
-                <p slot="description" class="description">Or Be Classical</p>
-                <md-field class="md-form-group" slot="inputs">
-                  <md-icon>face</md-icon>
-                  <label>First Name...</label>
-                  <md-input v-model="firstname"></md-input>
-                </md-field>
-                <md-field class="md-form-group" slot="inputs">
-                  <md-icon>email</md-icon>
-                  <label>Email...</label>
-                  <md-input v-model="email" type="email"></md-input>
-                </md-field>
-                <md-field class="md-form-group" slot="inputs">
-                  <md-icon>lock_outline</md-icon>
-                  <label>Password...</label>
-                  <md-input v-model="password"></md-input>
-                </md-field>
-                <md-button slot="footer" class="md-simple md-success md-lg">
-                  Get Started
-                </md-button>
-              </login-card>
+              <h4 class="title text-center" style="text-align: left;color: #BCBCBC">Who are we</h4>
+              <h2 class="title text-center" style="text-align: left">
+                We have advanced cat king planting technology and freezing technology to ensure that every high-quality nostalgia you shipped overseas
+              </h2>
+              <h3 class="description" style="text-align: left">
+                We operate a complete set of food manufacturing entities through our company
+                to produce a series of high-quality durian and some durian derivatives.
+                The king of Maoshan durian is well known in Southeast Asia and is known
+                as the "king of fruits". Malaysian durian is unique for its unique aroma
+                and strong fruit shell covered with brambles. Our products are even produced by
+                the advanced Musang King durian, which attracts many durian lovers all over the world.
+              </h3>
             </div>
           </div>
         </div>
       </div>
-      <div class="md-layout">
-        <div class="md-layout-item text-center">
-          <md-button href="#/login" class="md-simple md-success md-lg"
-            >View Login Page</md-button
-          >
-        </div>
-      </div>
-      <div class="section section-examples">
-        <div class="container-fluid text-center">
-          <div class="md-layout">
-            <div class="md-layout-item">
-              <a href="#/landing" target="_blank">
-                <img
-                  :src="landing"
-                  alt="Rounded Image"
-                  class="img-raised rounded img-fluid"
-                />
-              </a>
-              <md-button href="#/landing" class="md-simple md-success md-lg"
-                >View Landing Page</md-button
-              >
-            </div>
-            <div class="md-layout-item">
-              <a href="#/profile" target="_blank">
-                <img
-                  :src="profile"
-                  alt="Rounded Image"
-                  class="img-raised rounded img-fluid"
-                />
-              </a>
-              <md-button href="#/profile" class="md-simple md-success md-lg"
-                >View Profile Page</md-button
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="section section-download" id="downloadSection">
+    </div>
+    <div class="main main-offer" style="background-color: transparent">
+      <div class="section" style="padding-top: 10px">
         <div class="container">
-          <div class="md-layout text-center">
-            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-              <h2>Do you love this UI Kit?</h2>
-              <h4>
-                Cause if you do, it can be yours for FREE. Hit the buttons below
-                to navigate to our website where you can find the kit. Our
-                friends from
-                <a
-                  href="https://themeisle.com/?utm_campaign=mkfree-hestia&amp;utm_source=creativetim&amp;utm_medium=website"
-                  target="_blank"
-                  >ThemeIsle</a
-                >
-                created a Wordpress Theme which can be also downloaded for free.
-                Start a new project or give an old Bootstrap project a new look!
-              </h4>
-            </div>
-            <div class="md-layout-item md-size-50 md-small-size-100 mx-auto">
-              <md-button
-                href="https://www.creative-tim.com/product/material-kit"
-                target="_blank"
-                class="md-success md-lg"
-                ><i class="fab fa-html5"></i> Free HTML Download</md-button
-              >
-              <md-button
-                href="https://themeisle.com/themes/hestia/?utm_campaign=mkfree-hestia&amp;utm_source=creativetim&amp;utm_medium=website"
-                class="md-success md-lg"
-                target="_blank"
-                ><i class="fab fa-wordpress"></i> Wordpress Theme</md-button
-              >
-            </div>
-          </div>
-          <br /><br />
-
-          <div class="md-layout text-center">
-            <div class="md-layout-item md-size-66 md-small-size-100 mx-auto">
-              <h2>Want more?</h2>
-              <h4>
-                We've just launched
-                <a
-                  href="https://www.creative-tim.com/product/vue-material-dashboard-pro?ref=utp-mk-demos"
-                  target="_blank"
-                  >Vue Material Dashboard PRO</a
-                >
-                and
-                <a
-                  href="https://www.creative-tim.com/product/vue-material-kit-pro?ref=utp-vmk-demos"
-                  target="_blank"
-                  >Vue Material Kit PRO</a
-                >. Every product has a huge number of components, sections and
-                example pages. Start Your Development With A Badass Bootstrap UI
-                Kit inspired by Material Design.
-              </h4>
-            </div>
-            <div class="md-layout-item md-size-50 md-small-size-100 mx-auto">
-              <div class="btn-container">
-                <md-button
-                  href="https://www.creative-tim.com/product/vue-material-kit-pro?ref=utp-vmk-demos"
-                  class="md-button md-success md-lg md-upgrade"
-                  target="_blank"
-                  ><md-icon>unarchive</md-icon>Vue Material Kit PRO</md-button
-                >
-                <md-button
-                  href="https://www.creative-tim.com/product/vue-material-dashboard-pro?ref=utp-vmd-demos"
-                  class="md-button md-success md-lg md-upgrade"
-                  target="_blank"
-                  ><md-icon>unarchive</md-icon>Vue Material Dashboard
-                  PRO</md-button
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="sharing-area text-center">
+          <h2 style="color: #ffffff">What can we offer</h2>
+          <div class="features text-center">
             <div class="md-layout">
-              <div class="md-layout-item">
-                <h3>Thank you for supporting us!</h3>
+              <div class="md-layout-item md-medium-size-33 md-small-size-100" v-for="(item,index) in offerInfo" :key="index">
+                <div class="info">
+                  <div class="icon icon-info">
+                    <h3>{{ item.title }}</h3>
+                  </div>
+                  <h4 class="info-title">{{ item.ctitle }}</h4>
+                  <p>
+                    {{ item.content }}
+                  </p>
+                </div>
               </div>
             </div>
-
-            <md-button class="md-twitter"
-              ><i class="fab fa-twitter"></i>Tweet</md-button
-            >
-            <md-button class="md-facebook"
-              ><i class="fab fa-facebook-square"></i> Share</md-button
-            >
-            <md-button class="md-google"
-              ><i class="fab fa-google-plus"></i> Share</md-button
-            >
-            <md-button class="md-github"
-              ><i class="fab fa-github"></i> Star</md-button
-            >
           </div>
         </div>
       </div>
@@ -267,112 +100,180 @@
 </template>
 
 <script>
-import BasicElements from "./components/BasicElementsSection";
-import Navigation from "./components/NavigationSection";
-import SmallNavigation from "./components/SmallNavigationSection";
-import Tabs from "./components/TabsSection";
-import NavPills from "./components/NavPillsSection";
-import Notifications from "./components/NotificationsSection";
-import TypographyImages from "./components/TypographyImagesSection";
-import JavascriptComponents from "./components/JavascriptComponentsSection";
-import { LoginCard } from "@/components";
-
-export default {
-  components: {
-    BasicElements,
-    Navigation,
-    SmallNavigation,
-    Tabs,
-    NavPills,
-    Notifications,
-    TypographyImages,
-    JavascriptComponents,
-    LoginCard
-  },
-  name: "index",
-  bodyClass: "index-page",
-  props: {
-    image: {
-      type: String,
-      default: require("@/assets/img/vue-mk-header.jpg")
+  export default {
+    bodyClass: "landing-page",
+    props: {
+      header: {
+        type: String,
+        default: require("@/assets/img/home-bg1.png")
+      },
+      contentBg: {
+        type: String,
+        default: require("@/assets/img/home-bg2.png")
+      },
+      footerBg: {
+        type: String,
+        default: require("@/assets/img/home-footer.png")
+      },
+      footerPeople: {
+        type: String,
+        default: require("@/assets/img/home-footer-people.png")
+      }
     },
-    leaf4: {
-      type: String,
-      default: require("@/assets/img/leaf4.png")
+    data() {
+      return {
+        name: null,
+        email: null,
+        message: null,
+        year: new Date().getFullYear(),
+        offerInfo:[
+          {
+            title: 'Leading exporter',
+            ctitle: '领先的出口商',
+            content: 'Big horse, founded in 1996, is\n' +
+                    ' a leading exporter of quality\n' +
+                    ' food and frozen durian\n' +
+                    ' products in Malaysia. Over the\n' +
+                    ' years, it has developed rapidly,\n' +
+                    ' and its export business covers\n' +
+                    ' Australia, New Zealand, China,\n' +
+                    ' Hong Kong, France, the\n' +
+                    ' Netherlands and the United\n' +
+                    ' States.',
+          },
+          {
+            title: 'High quality planting',
+            ctitle: '高品质种植',
+            content: 'Big horse in durian and tropical fruits We have a high reputation for our products and grow our own water\n' +
+                    ' Fruit to ensure the best quality fruit. Our orchard\n' +
+                    ' The quality is very different, because our orchard only grows the most\n' +
+                    ' High grade durian and tropical fruit.',
+          },
+          {
+            title: 'Cold chain operators',
+            ctitle: '冷链运营商',
+            content: 'Big horse also produces frozen Durian\n' +
+                    ' Leading manufacturer and cold chain of products and durian desserts\n' +
+                    ' Business. The company has excellent refrigeration capacity and can\n' +
+                    ' To produce high quality products to meet the needs of customers.',
+          }
+        ],
+        footerInfo: [
+          'Be the best durian in the world.',
+          'Let more people enjoy Musang King of Malaysia.',
+          'Promote Malaysia to become an excellent durian Holy Land.',
+          'Make the best cold chain transportation of fruits and vegetables.',
+          'To be the industry leader of the highest quality durian fruit and food products.'
+        ]
+      };
     },
-    leaf3: {
-      type: String,
-      default: require("@/assets/img/leaf3.png")
+    computed: {
+      headerStyle() {
+        return {
+          backgroundImage: `url(${this.header})`
+        };
+      },
+      contentStyle() {
+        return {
+          backgroundImage: `url(${this.contentBg})`
+        };
+      },
+      footerStyle() {
+        return {
+          backgroundImage: `url(${this.footerBg})`,
+          height: `440px`
+        };
+      }
     },
-    leaf2: {
-      type: String,
-      default: require("@/assets/img/leaf2.png")
-    },
-    leaf1: {
-      type: String,
-      default: require("@/assets/img/leaf1.png")
-    },
-    signup: {
-      type: String,
-      default: require("@/assets/img/city.jpg")
-    },
-    landing: {
-      type: String,
-      default: require("@/assets/img/landing.jpg")
-    },
-    profile: {
-      type: String,
-      default: require("@/assets/img/profile.jpg")
-    }
-  },
-  data() {
-    return {
-      firstname: null,
-      email: null,
-      password: null,
-      leafShow: false
-    };
-  },
-  methods: {
-    leafActive() {
-      if (window.innerWidth < 768) {
-        this.leafShow = false;
-      } else {
-        this.leafShow = true;
+    methods: {
+      startNow() {
+        this.$Modal.success({
+          title: 'welcome',
+          content: 'Welcome to this website'
+        });
       }
     }
-  },
-  computed: {
-    headerStyle() {
-      return {
-        backgroundImage: `url(${this.image})`
-      };
-    },
-    signupImage() {
-      return {
-        backgroundImage: `url(${this.signup})`
-      };
-    }
-  },
-  mounted() {
-    this.leafActive();
-    window.addEventListener("resize", this.leafActive);
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", this.leafActive);
-  }
-};
+  };
 </script>
-<style lang="scss">
-.section-download {
-  .md-button + .md-button {
-    margin-left: 5px;
-  }
-}
 
-@media all and (min-width: 991px) {
-  .btn-container {
+<style lang="scss" scoped>
+  .md-card-actions.text-center {
     display: flex;
+    justify-content: center !important;
   }
-}
+  .contact-form {
+    margin-top: 30px;
+  }
+
+  .md-has-textarea + .md-layout {
+    margin-top: 15px;
+  }
+  h1 {
+    font-size: 3em;
+  }
+  h4, .h4 {
+    font-size: 1.225rem;
+    line-height: 1.8em;
+  }
+  .md-layout-item.md-size-50 {
+    min-width: 55%;
+    max-width: 55%;
+  }
+  .main-raised {
+    margin: -1560px 280px 0px;
+  }
+  .md-layout-item.md-size-66 {
+    min-width: 86.6666%;
+    max-width: 86.6666%;
+    flex: 0 1 86.6666%;
+  }
+  .main-offer {
+    margin: 10rem 280px 0px;
+    border-radius: 6px;
+  }
+  .info{
+    width: 20rem;
+    height: 27rem;
+    border: 2px #ffffff solid;
+    padding: 30px 30px 30px;
+    margin-top: 4rem;
+  }
+  .main-offer .md-layout-item {
+    padding-left: 25px;padding-right: 25px
+  }
+  .main-offer .info h3 {
+    color: #F1B016;font-weight: 500;text-align: left
+  }
+  .main-offer .info h4 {
+    color: #ffffff;margin-top: 10px;border-bottom: 1px solid #F1B016;width: 46%;text-align: left
+  }
+  .main-offer .info p {
+    text-align: left;font-size: 18px;color: #ffffff
+  }
+  .footer-info {
+
+  }
+  .footer-info li {
+    list-style: none;
+    line-height: 3rem;
+  }
+  .footer-info li p {
+    font-size: 14px;
+    color: #222222;
+  }
+  .footer-info li p img {
+    width: 28px;
+    height: 28px;
+    margin-right: 15px;
+  }
+  .people-img {
+    float: right;
+  }
+  .people-img img {
+    width: 340px;
+    height: 300px;
+  }
+  .copyright{
+    color: #ffffff;
+  }
 </style>
