@@ -48,7 +48,7 @@
       </div>
       <div class="container orchard">
         <div>
-          <div class="container-text" style="border-top: 1px solid #C0C0C0;margin-bottom: 20px;padding-top: 60px;margin-bottom: 30px">
+          <div class="container-text" style="border-top: 1px solid #C0C0C0;margin-bottom: 20px;padding-top: 40px;margin-bottom: 30px">
             <h1>Join us</h1>
             <p>
               <span class="bottom-line"></span>
@@ -236,9 +236,9 @@ h4, .h4 {
   line-height: 1.8em;
 }
 .md-layout-item.md-size-50 {
-  min-width: 70%;
-  max-width: 70%;
-  flex: 0 1 70%;
+  min-width: 80%;
+  max-width: 80%;
+  flex: 0 1 80%;
 }
 .big-text{
   height: 160px;
@@ -248,7 +248,7 @@ h4, .h4 {
   width: 100%;
   text-align: center;
   margin-top: 22px;
-  padding-top: 22px;
+  /*padding-top: 22px;*/
 }
 .bottom-line{
   display:inline-block;
@@ -276,10 +276,12 @@ h4, .h4 {
 }
 .container-product .md-layout .md-layout-item h3{
   margin-bottom: 30px;
+  margin-top: 10px;
 }
 .container-product .md-layout .md-layout-item h1{
   color: #D8D8D8;
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
+  margin-top: 0;
   width: 115px;
   border-bottom: 2px solid #F1B016;
 }
@@ -292,7 +294,7 @@ h4, .h4 {
   font-weight: 400;
   text-indent: 2em;
   line-height: 2em;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .container-product .md-layout .md-layout-item{
   padding: 0 35px;

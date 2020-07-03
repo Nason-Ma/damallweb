@@ -77,7 +77,7 @@
     <div class="main main-offer" style="background-color: transparent">
       <div class="section" style="padding-top: 10px">
         <div class="container">
-          <h2 style="color: #ffffff">What can we offer</h2>
+          <h2 style="color: #ffffff;margin: 0">What can we offer</h2>
           <div class="features text-center">
             <div class="md-layout">
               <div class="md-layout-item md-medium-size-33 md-small-size-100" v-for="(item,index) in offerInfo" :key="index">
@@ -217,8 +217,8 @@
     line-height: 1.8em;
   }
   .md-layout-item.md-size-50 {
-    min-width: 55%;
-    max-width: 55%;
+    min-width: 60%;
+    max-width: 60%;
   }
   .main-raised {
     margin: -1560px 280px 0px;
@@ -243,17 +243,17 @@
     padding-left: 25px;padding-right: 25px
   }
   .main-offer .info h3 {
-    color: #F1B016;font-weight: 500;text-align: left
+    color: #F1B016;font-weight: 500;text-align: left;margin-top: 0;
   }
   .main-offer .info h4 {
-    color: #ffffff;margin-top: 10px;border-bottom: 1px solid #F1B016;width: 46%;text-align: left
+    color: #ffffff;margin-top: 10px;border-bottom: 1px solid #F1B016;width: 50%;text-align: left
   }
   .main-offer .info p {
-    text-align: left;font-size: 18px;color: #ffffff
+    text-align: left;font-size: 18px;color: #ffffff;margin: 0;line-height: 1.5em;
   }
   .footer-info li {
     list-style: none;
-    line-height: 3rem;
+    line-height: 2.5rem;
   }
   .footer-info li p {
     font-size: 14px;
