@@ -207,6 +207,7 @@ export default {
   methods: {
     startNow() {
       this.$Modal.success({
+        okText:'OK',
         title: 'welcome',
         content: 'Welcome to this website'
       });

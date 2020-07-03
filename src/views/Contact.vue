@@ -91,7 +91,7 @@
           this.errorTips('Please enter your telephone');
           return false;
         }
-        this.successTips('Thank you');
+        this.successTips('We will contact you as soon as possible,Thank you!');
       }
     }
   };
