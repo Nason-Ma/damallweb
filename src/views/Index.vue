@@ -250,9 +250,6 @@
   .main-offer .info p {
     text-align: left;font-size: 18px;color: #ffffff
   }
-  .footer-info {
-
-  }
   .footer-info li {
     list-style: none;
     line-height: 3rem;
