@@ -50,7 +50,7 @@
     props: {
       header: {
         type: String,
-        default: require("@/assets/img/contact-backImg.png")
+        default: require("@/assets/img/contact-backImg.jpg")
       },
     },
     data() {

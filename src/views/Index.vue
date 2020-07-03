@@ -105,11 +105,11 @@
     props: {
       header: {
         type: String,
-        default: require("@/assets/img/home-bg1.png")
+        default: require("@/assets/img/home-bg1.jpg")
       },
       contentBg: {
         type: String,
-        default: require("@/assets/img/home-bg2.png")
+        default: require("@/assets/img/home-bg2.jpg")
       },
       footerBg: {
         type: String,

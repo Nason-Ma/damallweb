@@ -164,15 +164,15 @@ export default {
   props: {
     header: {
       type: String,
-      default: require("@/assets/img/product-bg.png")
+      default: require("@/assets/img/product-bg.jpg")
     },
     contentBg: {
       type: String,
-      default: require("@/assets/img/product-bg2.png")
+      default: require("@/assets/img/product-bg2.jpg")
     },
     footerBg: {
       type: String,
-      default: require("@/assets/img/product-footer-bg.png")
+      default: require("@/assets/img/product-footer-bg.jpg")
     },
   },
   data() {
@@ -249,6 +249,9 @@ h4, .h4 {
   text-align: center;
   margin-top: 22px;
   /*padding-top: 22px;*/
+}
+.container-text h1 {
+  margin-bottom: 0;
 }
 .bottom-line{
   display:inline-block;
