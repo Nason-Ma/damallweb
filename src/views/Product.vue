@@ -65,12 +65,12 @@
         </div>
       </div>
     </parallax2>
-    <div class="container-product">
-      <div class="md-layout" style="margin-right: 0">
-        <div class="md-layout-item md-size-25 ml-auto" style="min-width: 26%;max-width: 26%">
+    <div class="container container-product" style="flex-wrap: wrap;margin-left: auto;margin-right: auto;justify-content: space-between;max-width: 1140px">
+      <div class="md-layout">
+        <div class="md-layout-item ml-auto">
           <a href="javascript:void(0);"><img src="../assets/img/product-img3.png" class="img-fluid" alt="product"></a>
         </div>
-        <div class="md-layout-item md-size-25 mr-auto">
+        <div class="md-layout-item mr-auto md-small-size-70 md-xsmall-size-100">
           <h1>NO1.</h1>
           <h3>Old tree Musang King Durian</h3>
           <p class="text">
@@ -86,7 +86,7 @@
         </div>
       </div>
       <div class="md-layout" style="margin-right: 0">
-        <div class="md-layout-item md-size-25 ml-auto">
+        <div class="md-layout-item ml-auto md-small-size-70 md-xsmall-size-100">
           <h1>NO2.</h1>
           <h3>Small tree Musang King Durian</h3>
           <p class="text">
@@ -101,7 +101,7 @@
                   class="md-success md-sm"
           > Get to know now</md-button>
         </div>
-        <div class="md-layout-item md-size-25 mr-auto" style="min-width: 26%;max-width: 26%">
+        <div class="md-layout-item mr-auto">
           <a href="javascript:void(0);"><img src="../assets/img/product-img4.png" class="img-fluid" alt="product"></a>
         </div>
       </div>
@@ -115,10 +115,10 @@
       </div>
     </div>
     <div class="md-layout" style="margin-right: 0;margin-top: 60px">
-      <div class="md-layout-item md-size-25 ml-auto" style="padding: 0;min-width: 20%;max-width: 20%">
+      <div class="md-layout-item md-size-25 ml-auto" style="padding: 0;min-width: 21%;max-width: 21%">
         <a href="javascript:void(0);"><img src="../assets/img/more-product-left.png" class="img-fluid" alt="product"></a>
       </div>
-      <div class="md-layout-item md-size-25 mr-auto" style="padding: 0;min-width: 26.65%;max-width: 26.65%">
+      <div class="md-layout-item md-size-25 mr-auto" style="padding: 0;min-width: 28%;max-width: 28%">
         <a href="javascript:void(0);"><img src="../assets/img/more-product-right1.png" class="img-fluid" alt="product"></a>
         <a href="javascript:void(0);"><img src="../assets/img/more-product-right2.png" class="img-fluid" alt="product"></a>
       </div>
@@ -194,7 +194,7 @@ export default {
         alignItems: `start`,
         padding: `20px 0`,
         display: `block`,
-        height: `165vh`
+        height: `160%`
       };
     },
     footerStyle() {
@@ -278,12 +278,12 @@ h4, .h4 {
   margin-top: 100px;
 }
 .container-product .md-layout .md-layout-item h3{
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   margin-top: 10px;
 }
 .container-product .md-layout .md-layout-item h1{
   color: #D8D8D8;
-  /*margin-bottom: 10px;*/
+  margin-bottom: 0;
   margin-top: 0;
   width: 115px;
   border-bottom: 2px solid #F1B016;
@@ -296,12 +296,18 @@ h4, .h4 {
 .container-product .md-layout .md-layout-item .text{
   font-weight: 400;
   text-indent: 2em;
-  line-height: 2em;
+  line-height: 2.2em;
   margin-bottom: 15px;
 }
 .container-product .md-layout .md-layout-item{
-  padding: 0 35px;
+  padding: 0 30px;
   color: #222222;
+}
+.container-product .md-layout .ml-auto{
+  padding-left: 100px;
+}
+.container-product .md-layout .mr-auto{
+  padding-right: 100px;
 }
 .flag-img {
   width: 140px;

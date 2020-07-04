@@ -55,13 +55,13 @@
         <div class="container">
           <div class="md-layout">
             <div
-                    class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center"
+                    class="md-layout-item md-size-85 md-xsmall-size-100 mx-auto text-center"
             >
-              <h4 class="title text-center" style="text-align: left;color: #BCBCBC">Who are we</h4>
-              <h2 class="title text-center" style="text-align: left">
+              <h4 class="title text-left" style="color: #BCBCBC">Who are we</h4>
+              <h2 class="title text-left">
                 We have advanced cat king planting technology and freezing technology to ensure that every high-quality nostalgia you shipped overseas
               </h2>
-              <h3 class="description" style="text-align: left">
+              <h3 class="description text-left">
                 We operate a complete set of food manufacturing entities through our company
                 to produce a series of high-quality durian and some durian derivatives.
                 The king of Maoshan durian is well known in Southeast Asia and is known
@@ -80,12 +80,14 @@
           <h2 style="color: #ffffff;margin: 0">What can we offer</h2>
           <div class="features text-center">
             <div class="md-layout">
-              <div class="md-layout-item md-medium-size-33 md-small-size-100" v-for="(item,index) in offerInfo" :key="index">
+              <div class="md-layout-item md-size-30 md-small-size-100" v-for="(item,index) in offerInfo" :key="index">
                 <div class="info">
                   <div class="icon icon-info">
                     <h3>{{ item.title }}</h3>
                   </div>
-                  <h4 class="info-title">{{ item.ctitle }}</h4>
+                  <div style="text-align: left">
+                    <h4 class="info-title">{{ item.ctitle }}</h4>
+                  </div>
                   <p>
                     {{ item.content }}
                   </p>
@@ -221,35 +223,34 @@
     max-width: 60%;
   }
   .main-raised {
-    margin: -1560px 280px 0px;
-  }
-  .md-layout-item.md-size-66 {
-    min-width: 86.6666%;
-    max-width: 86.6666%;
-    flex: 0 1 86.6666%;
+    /*margin: -1560px 280px 0px;*/
+    margin-top: -1560px;
   }
   .main-offer {
-    margin: 10rem 280px 0px;
+    margin-top: 120px;
     border-radius: 6px;
   }
+  .main-offer .md-layout-item:first-of-type{
+    margin-right: 40px;
+  }
+  .main-offer .md-layout-item:last-of-type{
+    margin-left: 40px;
+  }
   .info{
-    width: 20rem;
-    height: 27rem;
+    /*width: 90%;*/
+    min-height: 87%;
     border: 2px #ffffff solid;
     padding: 30px 30px 30px;
     margin-top: 4rem;
-  }
-  .main-offer .md-layout-item {
-    padding-left: 25px;padding-right: 25px
   }
   .main-offer .info h3 {
     color: #F1B016;font-weight: 500;text-align: left;margin-top: 0;
   }
   .main-offer .info h4 {
-    color: #ffffff;margin-top: 10px;border-bottom: 1px solid #F1B016;width: 50%;text-align: left
+    color: #ffffff;margin-top: 10px;border-bottom: 1px solid #F1B016;text-align: left;display: inline-block
   }
   .main-offer .info p {
-    text-align: left;font-size: 18px;color: #ffffff;margin: 0;line-height: 1.5em;
+    text-align: left;font-size: 1.1rem;color: #ffffff;margin: 0;line-height: 1.6em;
   }
   .footer-info li {
     list-style: none;
