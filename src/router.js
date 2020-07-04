@@ -39,6 +39,10 @@ export default new Router({
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
       }
+    },
+    {
+      path: "*",
+      component: () => import('./views/404')
     }
   ],
   scrollBehavior: to => {
