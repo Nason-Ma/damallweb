@@ -20,6 +20,9 @@ export default new Router({
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "#F1B016" }
+      },
+      meta:{
+        title: 'Big Horse'
       }
     },
     {
@@ -29,6 +32,9 @@ export default new Router({
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
+      },
+      meta:{
+        title: 'Product'
       }
     },
     {
@@ -38,6 +44,9 @@ export default new Router({
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: "black" }
+      },
+      meta:{
+        title: 'Contact'
       }
     },
     {
