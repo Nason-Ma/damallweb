@@ -112,6 +112,7 @@
   .mj {
     position: relative;
     margin: auto;
+    margin-bottom: 80px;
     z-index: 30;
     width: 60px;
     -webkit-transform: scale(0.6) translatey(70%);

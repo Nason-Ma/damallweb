@@ -45,7 +45,7 @@
     <parallax2 class="section page-header header-filter" style="height: 60px;padding: 40px 0;background-color: #F1B016">
       <div class="copyright">
         Copyright &copy; {{ year }}, made in
-        <a href="https://www.creative-tim.com/" target="_blank">Big Horse</a>
+        <a href="javascript:void(0);" target="_blank">Big Horse</a>
         for a better web.
       </div>
     </parallax2>
