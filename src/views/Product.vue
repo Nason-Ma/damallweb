@@ -33,12 +33,12 @@
     </div>
     <parallax2 class="section page-header header-filter" :style="contentStyle">
       <div class="container orchard">
-        <div>
-          <div>
+        <div class="md-layout">
+          <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center">
             <div class="orchard-img">
               <img src="../assets/img/product-img1.png" alt="">
             </div>
-            <div class="orchard-text" style="padding-bottom: 10px">
+            <div class="orchard-text">
               For those who are willing to take risks, they are always ahead of us.
               Join us on a journey we've been through for 100 years
               Selya SID, founder of big horse, started planting the first durian tree under the orchard.
@@ -47,14 +47,14 @@
         </div>
       </div>
       <div class="container orchard">
-        <div>
+        <div class="md-layout">
           <div class="container-text" style="border-top: 1px solid #C0C0C0;margin-bottom: 20px;padding-top: 40px;margin-bottom: 30px">
             <h1>Join us</h1>
             <p>
               <span class="bottom-line"></span>
             </p>
           </div>
-          <div>
+          <div class="md-layout-item md-size-66 md-xsmall-size-100 mx-auto text-center">
             <div class="orchard-img">
               <img src="../assets/img/product-img2.png" alt="">
             </div>
@@ -266,10 +266,10 @@ h4, .h4 {
 }
 .orchard .orchard-text {
   color: #222222;
-  padding: 30px 200px;
   text-align: left;
   line-height: 2em;
   font-size: 16px;
+  margin: 30px 0 10px 0;
 }
 .container-product{
   margin-bottom: 40px;
