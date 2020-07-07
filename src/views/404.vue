@@ -26,8 +26,8 @@
           <div class="moon"></div><span>4</span>
         </div>
       </div>
-      <div class="figure" style="text-align: center;margin-top: 180px;color: #68e3e9">
-        <h3>ERROR...SORRY,PAGE NOT FUND</h3>
+      <div class="figure" style="text-align: center;margin-top: 200px;color: #68e3e9">
+        <h3>ERROR...SORRY,PAGE NOT FOUND</h3>
       </div>
     </parallax>
   </div>
